@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | KARAN</title>
+
+<style>
+:root{
+  --neon:#000000;
+  --bg:#070b14;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI,sans-serif;
+}
+
+body{
+  background:var(--bg);
+  color:#fff;
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  width:100%;
+  top:0;
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  padding:20px;
+  background:rgba(0,0,0,.7);
+  backdrop-filter:blur(10px);
+}
+
+nav a{
+  text-decoration:none;
+  color:#fff;
+  font-weight:600;
+  transition:.3s;
+}
+
+nav a:hover{
+  color:var(--neon);
+  text-shadow:0 0 10px var(--neon);
+}
+
+/* SECTION */
+.contact-section{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding-top:120px;
+}
+
+/* FRAME */
+.profile-frame{
+  position:relative;
+  width:350px;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 0 30px var(--neon);
+  transition:.4s;
+}
+
+.profile-frame:hover{
+  transform:scale(1.05);
+}
+
+/* IMAGE */
+.profile-frame img{
+  width:100%;
+  height:450px;
+  object-fit:cover;
+  display:block;
+}
+
+/* OVERLAY */
+.profile-info{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  padding:20px;
+  background:linear-gradient(to top, rgba(0,0,0,.95), transparent);
+}
+
+/* TEXT */
+.profile-info h2{
+  margin-bottom:8px;
+  color:var(--neon);
+  text-shadow:0 0 10px var(--neon);
+}
+
+.profile-info p{
+  margin:6px 0;
+  font-size:14px;
+}
+
+/* CLICKABLE LINKS */
+.profile-info a{
+  color:#ececec;
+  text-decoration:none;
+  transition:.3s;
+}
+
+.profile-info a:hover{
+  color:var(--neon);
+  text-shadow:0 0 10px var(--neon);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .profile-frame{
+    width:90%;
+  }
+  .profile-frame img{
+    height:400px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="projects.html">Projects</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<section class="contact-section">
+
+  <div class="profile-frame">
+    <img src="images/karanpfp.jpeg" alt="Owner">
+
+    <div class="profile-info">
+      <h2>Karan Mahato</h2>
+      <p>UPVC WORKER/CONTRACTER</p>
+
+      <!-- CLICKABLE PHONE -->
+      <p>📞 <a href="tel:+917896811726">+91 7896811726</a></p>
+
+      <!-- CLICKABLE EMAIL -->
+      <p>📧 <a href="mailto:yourmail@gmail.com">yourmail@gmail.com</a></p>
+
+    </div>
+  </div>
+
+</section>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>About | KARAN</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+:root{
+  --neon:#00f7ff;
+  --bg:#070b14;
+  --glass:rgba(255,255,255,0.05);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI,sans-serif;
+}
+
+body{
+  background:url('images/karanwork7.jpeg') center/cover no-repeat fixed;
+  position:relative;
+  min-height:100vh;
+  color:#fff;
+}
+
+/* DARK OVERLAY */
+body::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.75);
+  z-index:0;
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  width:100%;
+  top:0;
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  padding:20px;
+  background:rgba(0,0,0,.7);
+  backdrop-filter:blur(10px);
+  z-index:2;
+}
+
+nav a{
+  text-decoration:none;
+  color:#fff;
+  font-weight:600;
+  transition:.3s;
+}
+
+nav a:hover{
+  color:var(--neon);
+  text-shadow:0 0 10px var(--neon);
+}
+
+/* SECTION */
+.section{
+  position:relative;
+  z-index:1;
+  padding:150px 20px 60px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  min-height:100vh;
+}
+
+/* TITLE */
+.section h1{
+  font-size:2.8rem;
+  margin-bottom:30px;
+  color:var(--neon);
+  text-shadow:0 0 15px var(--neon);
+}
+
+/* CARD */
+.card{
+  max-width:800px;
+  width:90%;
+  padding:30px;
+  background:var(--glass);
+  backdrop-filter:blur(15px);
+  border-radius:12px;
+  border:1px solid rgba(0,247,255,.3);
+  box-shadow:0 0 25px var(--neon);
+  transition:.4s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 0 40px var(--neon);
+}
+
+.card p{
+  font-size:16px;
+  line-height:1.6;
+  opacity:0.95;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .section h1{
+    font-size:2rem;
+  }
+  .card{
+    padding:20px;
+  }
+}
+</style>
+</head>
+
+
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="projects.html">Projects</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<section class="section">
+  <h1>About Me</h1>
+  <div class="card">
+    <p>I am Karan, a 20-year-old skilled craftsman from Assam. I specialize in installing and repairing UPVC doors and windows, delivering quality workmanship for homes. I also take custom projects and contracts. Passionate about precision and customer satisfaction, I ensure every installation is secure, functional, and aesthetically perfect.</p>
+  </div>
+</section>
+
+</body>
+</html>

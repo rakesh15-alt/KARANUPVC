@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>RAKESH | Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --neon:#00f7ff;
+  --bg:#070b14;
+  --glass:rgba(255,255,255,0.05);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI,sans-serif;
+}
+
+body{
+  background:var(--bg);
+  color:#fff;
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  width:100%;
+  top:0;
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  padding:20px;
+  background:rgba(0,0,0,.7);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+
+nav a{
+  text-decoration:none;
+  color:#fff;
+  font-weight:600;
+  transition:.3s;
+}
+
+nav a:hover{
+  color:var(--neon);
+  text-shadow:0 0 10px var(--neon);
+}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  background:url('images/karanbackground.jpeg') center/cover no-repeat;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+  padding:120px 20px 60px;
+}
+
+.hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.75);
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+/* PFP */
+.pfp{
+  width:170px;
+  height:170px;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid var(--neon);
+  box-shadow:0 0 25px var(--neon);
+  margin-bottom:25px;
+  animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-12px);}
+  100%{transform:translateY(0);}
+}
+
+.hero h1{
+  font-size:2.5rem;
+  text-shadow:0 0 15px var(--neon);
+}
+
+.hero p{
+  margin-top:10px;
+  opacity:.8;
+}
+
+/* BUTTON */
+.btn{
+  margin-top:25px;
+  padding:12px 30px;
+  border:2px solid var(--neon);
+  background:transparent;
+  color:#fff;
+  cursor:pointer;
+  transition:.4s;
+}
+
+.btn:hover{
+  background:var(--neon);
+  color:#000;
+  box-shadow:0 0 20px var(--neon);
+}
+
+/* ===== ABOUT FRAME ===== */
+.about-frame{
+  margin-top:60px;
+  max-width:800px;
+  width:90%;
+  padding:30px;
+  background:var(--glass);
+  backdrop-filter:blur(15px);
+  border-radius:12px;
+  border:2px solid transparent;
+  box-shadow:0 0 20px rgba(0,247,255,.2);
+  position:relative;
+  overflow:hidden;
+  transition:.4s;
+  opacity:0;          /* for scroll reveal */
+  transform:translateY(40px);
+}
+
+/* Neon Animated Border */
+.about-frame::before{
+  content:'';
+  position:absolute;
+  top:-2px;
+  left:-2px;
+  width:calc(100% + 4px);
+  height:calc(100% + 4px);
+  background:linear-gradient(270deg, #00f7ff, #ff00ff, #00ff7f, #ffdd00);
+  background-size:600% 600%;
+  border-radius:14px;
+  z-index:-1;
+  animation:neonBorder 8s linear infinite;
+}
+
+@keyframes neonBorder{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+/* Hover lift */
+.about-frame:hover{
+  transform:translateY(-8px);
+  box-shadow:0 0 30px var(--neon);
+}
+
+/* Typing animation */
+#about-text{
+  font-size:15px;
+  line-height:1.6;
+  border-right:3px solid var(--neon);
+  white-space:pre-wrap; /* keeps line breaks */
+  padding-right:2px;
+}
+
+}
+
+@keyframes typing{
+  from{width:0;}
+  to{width:100%;}
+}
+
+@keyframes blink{
+  0%,100%{border-color:transparent;}
+  50%{border-color:var(--neon);}
+}
+
+/* Reveal on scroll */
+.scroll-reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 1s ease-out;
+}
+
+.scroll-reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .pfp{
+    width:130px;
+    height:130px;
+  }
+
+  .hero h1{
+    font-size:2rem;
+  }
+
+  .about-frame{
+    padding:20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="projects.html">Projects</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+
+    <img src="images/karanpfp.jpeg" class="pfp" alt="Karan">
+
+    <h1>Hi, I'm Karan👑</h1>
+    <p>UPVC WORKER/MANAGER</p>
+
+    <a href="projects.html">
+      <button class="btn">View My Work</button>
+    </a>
+
+    <!-- RECTANGULAR ABOUT FRAME -->
+ <!-- RECTANGULAR ABOUT FRAME -->
+<!-- RECTANGULAR ABOUT FRAME -->
+<div class="about-frame scroll-reveal">
+  <h2>About Me</h2>
+  <p id="about-text"></p>
+</div>
+
+<script>
+// TYPEWRITER EFFECT
+const text = `Karan, 20, from Assam — UPVC door & window expert, contractor, dedicated to precise and quality home installations. Skilled in repairs, custom fittings, and customer service, ensuring every project is reliable, durable, and visually appealing for homes and businesses alike.`;
+
+const aboutText = document.getElementById('about-text');
+let i = 0;
+
+function typeWriter(){
+  if(i < text.length){
+    aboutText.innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeWriter, 25); // typing speed
+  }
+}
+
+window.addEventListener('load', () => {
+  typeWriter();
+});
+</script>
+
+
+
+  </div>
+</section>
+
+<script>
+// SCROLL REVEAL
+const reveal = document.querySelectorAll('.scroll-reveal');
+
+window.addEventListener('scroll', () => {
+  const triggerBottom = window.innerHeight * 0.85;
+
+  reveal.forEach(el => {
+    const boxTop = el.getBoundingClientRect().top;
+    if(boxTop < triggerBottom){
+      el.classList.add('active');
+    }
+  });
+});
+</script>
+
+</body>
+</html>

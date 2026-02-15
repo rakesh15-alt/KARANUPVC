@@ -1,0 +1,149 @@
+
+/* ===== ROOT ===== */
+:root{
+  --neon:#00f7ff;
+  --bg:#070b14;
+  --glass:rgba(255,255,255,0.05);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif;
+}
+
+body{
+  background:var(--bg);
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* ===== NAVBAR ===== */
+nav{
+  position:fixed;
+  width:100%;
+  top:0;
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  padding:20px;
+  background:rgba(0,0,0,.6);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+
+nav a{
+  text-decoration:none;
+  color:#fff;
+  font-weight:600;
+  position:relative;
+  transition:.3s;
+}
+
+nav a::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-5px;
+  width:0%;
+  height:2px;
+  background:var(--neon);
+  transition:.4s;
+}
+
+nav a:hover{
+  color:var(--neon);
+  text-shadow:0 0 10px var(--neon);
+}
+
+nav a:hover::after{
+  width:100%;
+}
+
+/* ===== HERO ===== */
+.hero{
+  height:100vh;
+  background:url('https://images.unsplash.com/photo-1531297484001-80022131f5a1') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+}
+
+.hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.7);
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+}
+
+.hero h1{
+  font-size:3rem;
+  text-shadow:0 0 15px var(--neon);
+}
+
+.btn{
+  margin-top:20px;
+  padding:12px 30px;
+  border:2px solid var(--neon);
+  background:transparent;
+  color:#fff;
+  cursor:pointer;
+  transition:.4s;
+  position:relative;
+}
+
+.btn:hover{
+  background:var(--neon);
+  color:#000;
+  box-shadow:0 0 20px var(--neon);
+}
+
+/* ===== SECTION ===== */
+.section{
+  padding:120px 10%;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  animation:fadeIn 1s ease forwards;
+}
+
+.card{
+  background:var(--glass);
+  padding:30px;
+  margin:20px 0;
+  border-radius:10px;
+  backdrop-filter:blur(15px);
+  transition:.4s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 25px var(--neon);
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(40px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  nav{
+    gap:20px;
+    font-size:14px;
+  }
+
+  .hero h1{
+    font-size:2rem;
+  }
+}
